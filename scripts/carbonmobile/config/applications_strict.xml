@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!--
+  STRICT-SLO workload mix (C4). All five apps now have a tight
+  max_delay_requirement (50-150 ms) and the IoT-Sensor + AR
+  classes have higher Poisson rates to stress the system.
+-->
+<applications>
+	<application name="AUGMENTED_REALITY">
+		<usage_percentage>25</usage_percentage>
+		<prob_cloud_selection>20</prob_cloud_selection>
+		<poisson_interarrival>2</poisson_interarrival>
+		<delay_sensitivity>1</delay_sensitivity>
+		<active_period>60</active_period>
+		<idle_period>5</idle_period>
+		<data_upload>1500</data_upload>
+		<data_download>25</data_download>
+		<task_length>2000</task_length>
+		<required_core>1</required_core>
+		<vm_utilization_on_edge>20</vm_utilization_on_edge>
+		<vm_utilization_on_cloud>2</vm_utilization_on_cloud>
+		<vm_utilization_on_mobile>0</vm_utilization_on_mobile>
+		<max_delay_requirement>0.1</max_delay_requirement>
+	</application>
+	<application name="HEALTH_APP">
+		<usage_percentage>15</usage_percentage>
+		<prob_cloud_selection>20</prob_cloud_selection>
+		<poisson_interarrival>15</poisson_interarrival>
+		<delay_sensitivity>1</delay_sensitivity>
+		<active_period>30</active_period>
+		<idle_period>10</idle_period>
+		<data_upload>1250</data_upload>
+		<data_download>20</data_download>
+		<task_length>400</task_length>
+		<required_core>1</required_core>
+		<vm_utilization_on_edge>5</vm_utilization_on_edge>
+		<vm_utilization_on_cloud>0.5</vm_utilization_on_cloud>
+		<vm_utilization_on_mobile>0</vm_utilization_on_mobile>
+		<max_delay_requirement>0.15</max_delay_requirement>
+	</application>
+	<application name="HEAVY_COMP_APP">
+		<usage_percentage>15</usage_percentage>
+		<prob_cloud_selection>40</prob_cloud_selection>
+		<poisson_interarrival>30</poisson_interarrival>
+		<delay_sensitivity>1</delay_sensitivity>
+		<active_period>60</active_period>
+		<idle_period>30</idle_period>
+		<data_upload>2500</data_upload>
+		<data_download>250</data_download>
+		<task_length>3000</task_length>
+		<required_core>1</required_core>
+		<vm_utilization_on_edge>30</vm_utilization_on_edge>
+		<vm_utilization_on_cloud>3</vm_utilization_on_cloud>
+		<vm_utilization_on_mobile>0</vm_utilization_on_mobile>
+		<max_delay_requirement>0.5</max_delay_requirement>
+	</application>
+	<application name="INFOTAINMENT_APP">
+		<usage_percentage>25</usage_percentage>
+		<prob_cloud_selection>15</prob_cloud_selection>
+		<poisson_interarrival>3</poisson_interarrival>
+		<delay_sensitivity>1</delay_sensitivity>
+		<active_period>30</active_period>
+		<idle_period>15</idle_period>
+		<data_upload>25</data_upload>
+		<data_download>2000</data_download>
+		<task_length>750</task_length>
+		<required_core>1</required_core>
+		<vm_utilization_on_edge>10</vm_utilization_on_edge>
+		<vm_utilization_on_cloud>1</vm_utilization_on_cloud>
+		<vm_utilization_on_mobile>0</vm_utilization_on_mobile>
+		<max_delay_requirement>0.2</max_delay_requirement>
+	</application>
+	<application name="IOT_SENSOR">
+		<usage_percentage>20</usage_percentage>
+		<prob_cloud_selection>10</prob_cloud_selection>
+		<poisson_interarrival>1</poisson_interarrival>
+		<delay_sensitivity>1</delay_sensitivity>
+		<active_period>120</active_period>
+		<idle_period>0</idle_period>
+		<data_upload>2</data_upload>
+		<data_download>1</data_download>
+		<task_length>50</task_length>
+		<required_core>1</required_core>
+		<vm_utilization_on_edge>1</vm_utilization_on_edge>
+		<vm_utilization_on_cloud>0.1</vm_utilization_on_cloud>
+		<vm_utilization_on_mobile>0</vm_utilization_on_mobile>
+		<max_delay_requirement>0.05</max_delay_requirement>
+	</application>
+</applications>

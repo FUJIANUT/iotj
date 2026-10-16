@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!--
+  Workload mix for the CarbonMobile evaluation. Five application
+  classes calibrated against published task profiles:
+    AR / Game / Heavy / Info: same as EdgeCloudSim sample_app_1.
+    IOT_SENSOR (new): periodic environmental telemetry, mimicking
+        canonical IoT workloads (smart-city air quality, agricultural
+        sensors, building HVAC). Tiny upload, no download, very short
+        compute, hard real-time. Added because AR/Game-only mixes are
+        unrepresentative of real IoT traffic.
+  Usage percentages re-balanced so the mix sums to 100%.
+-->
+<applications>
+	<application name="AUGMENTED_REALITY">
+		<usage_percentage>25</usage_percentage>
+		<prob_cloud_selection>20</prob_cloud_selection>
+		<poisson_interarrival>5</poisson_interarrival>
+		<delay_sensitivity>0</delay_sensitivity>
+		<active_period>45</active_period>
+		<idle_period>15</idle_period>
+		<data_upload>1500</data_upload>
+		<data_download>25</data_download>
+		<task_length>2000</task_length>
+		<required_core>1</required_core>
+		<vm_utilization_on_edge>20</vm_utilization_on_edge>
+		<vm_utilization_on_cloud>2</vm_utilization_on_cloud>
+		<vm_utilization_on_mobile>0</vm_utilization_on_mobile>
+	</application>
+	<application name="HEALTH_APP">
+		<usage_percentage>15</usage_percentage>
+		<prob_cloud_selection>20</prob_cloud_selection>
+		<poisson_interarrival>30</poisson_interarrival>
+		<delay_sensitivity>0</delay_sensitivity>
+		<active_period>10</active_period>
+		<idle_period>20</idle_period>
+		<data_upload>1250</data_upload>
+		<data_download>20</data_download>
+		<task_length>400</task_length>
+		<required_core>1</required_core>
+		<vm_utilization_on_edge>5</vm_utilization_on_edge>
+		<vm_utilization_on_cloud>0.5</vm_utilization_on_cloud>
+		<vm_utilization_on_mobile>0</vm_utilization_on_mobile>
+	</application>
+	<application name="HEAVY_COMP_APP">
+		<usage_percentage>15</usage_percentage>
+		<prob_cloud_selection>40</prob_cloud_selection>
+		<poisson_interarrival>60</poisson_interarrival>
+		<delay_sensitivity>0</delay_sensitivity>
+		<active_period>60</active_period>
+		<idle_period>60</idle_period>
+		<data_upload>2500</data_upload>
+		<data_download>250</data_download>
+		<task_length>3000</task_length>
+		<required_core>1</required_core>
+		<vm_utilization_on_edge>30</vm_utilization_on_edge>
+		<vm_utilization_on_cloud>3</vm_utilization_on_cloud>
+		<vm_utilization_on_mobile>0</vm_utilization_on_mobile>
+	</application>
+	<application name="INFOTAINMENT_APP">
+		<usage_percentage>25</usage_percentage>
+		<prob_cloud_selection>15</prob_cloud_selection>
+		<poisson_interarrival>7</poisson_interarrival>
+		<delay_sensitivity>0</delay_sensitivity>
+		<active_period>15</active_period>
+		<idle_period>45</idle_period>
+		<data_upload>25</data_upload>
+		<data_download>2000</data_download>
+		<task_length>750</task_length>
+		<required_core>1</required_core>
+		<vm_utilization_on_edge>10</vm_utilization_on_edge>
+		<vm_utilization_on_cloud>1</vm_utilization_on_cloud>
+		<vm_utilization_on_mobile>0</vm_utilization_on_mobile>
+	</application>
+	<application name="IOT_SENSOR">
+		<usage_percentage>20</usage_percentage>
+		<prob_cloud_selection>10</prob_cloud_selection>
+		<poisson_interarrival>2</poisson_interarrival>
+		<delay_sensitivity>1</delay_sensitivity>
+		<active_period>120</active_period>
+		<idle_period>0</idle_period>
+		<data_upload>2</data_upload>
+		<data_download>1</data_download>
+		<task_length>50</task_length>
+		<required_core>1</required_core>
+		<vm_utilization_on_edge>1</vm_utilization_on_edge>
+		<vm_utilization_on_cloud>0.1</vm_utilization_on_cloud>
+		<vm_utilization_on_mobile>0</vm_utilization_on_mobile>
+		<max_delay_requirement>0.5</max_delay_requirement>
+	</application>
+</applications>
